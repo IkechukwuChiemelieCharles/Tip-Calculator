@@ -183,6 +183,17 @@ label {
   color: var(--Strongcyan);
 }
 
+.inactiveReset {
+  background-color: var(--Darkgrayishcyan);
+  width: 80%;
+  height: 4rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--Verydarkcyan);
+  cursor: pointer;
+}
 .reset {
   background-color: var(--Strongcyan);
   width: 80%;
@@ -216,19 +227,19 @@ label {
 
 @media screen and (min-width: 640px) {
   body {
-    background-color: black;
   }
 
   .left {
     width: 50%;
+    /* height: 40rem; */
   }
   .right {
     width: 50%;
+    /* height: 40rem; */
   }
 }
 @media screen and (min-width: 1024px) {
   body {
-    background-color: red;
   }
 
   .bgCont {

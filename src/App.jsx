@@ -18,6 +18,11 @@ function App() {
 
   const [selectedBtn, setSelectedBtn] = useState(null);
 
+
+  function handleselectedbtn(id){
+    selectedBtn(id)
+  }
+
   function handleTipBtnInput(e) {
     const value = e.target.innerText;
 
@@ -25,6 +30,28 @@ function App() {
 
     setSelectedBtn(!selectedBtn);
   }
+
+  //   function TotalAmntBtnCalc (){
+  // //Calc the tip amount
+  // let tipAmnt = (+tipPerc / 100) * +bill;
+
+  // //calc the total bill with tip
+  // let totalbillWithTip = Math.round(+bill + +tipAmnt);
+
+  // // calc the amount  each person needs to pay
+  // let totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
+  //   }
+
+  // function TotalAmntInputCalc (){
+  //   //Calc the tip amount
+  //   let tipAmnt = (+tipPerc / 100) * +bill;
+
+  //   //calc the total bill with tip
+  //   let totalbillWithTip = Math.round(+bill + +tipAmnt);
+
+  //   // calc the amount  each person needs to pay
+  //   let totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
+  //     }
 
   //Calc the tip amount
   let tipAmnt = (+tipPerc / 100) * +bill;
@@ -34,14 +61,6 @@ function App() {
 
   // calc the amount  each person needs to pay
   let totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
-
-  let tipAmnt2 = (+tipPerc / 100) * +bill;
-
-  //calc the total bill with tip
-  let totalbillWithTip2 = Math.round(+bill + +tipAmnt2);
-
-  // calc the amount  each person needs to pay
-  let totalAmountPerPerson2 = Math.round(+totalbillWithTip2 / +num);
 
   function handleReset() {
     setBill("");
@@ -67,6 +86,8 @@ function App() {
               onBtnClick={handleTipBtnInput}
               numbers={numbers}
               selectedBtn={selectedBtn}
+              // handleselectedbtn={handleselectedbtn}
+
             />
           </div>
           <div className="right">

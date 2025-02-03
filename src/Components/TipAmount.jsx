@@ -4,7 +4,7 @@ const TipAmount = ({ tipAmnt, totalAmountPerPerson, bill, num, onReset }) => {
   return (
     <div className="tipAmtCont">
       <div className="writeCont">
-        <Write tip="Tip Amount">{tipAmnt}</Write>
+        <Write tip="Tip Amount">{Math.round(tipAmnt)}</Write>
         <Write tip="Total">
           {bill === "" || bill === "0" || totalAmountPerPerson === Infinity
             ? 0
@@ -12,7 +12,11 @@ const TipAmount = ({ tipAmnt, totalAmountPerPerson, bill, num, onReset }) => {
         </Write>
       </div>
 
-      <button className="reset" onClick={onReset}>
+      <button
+        className={bill === "" ? "inactiveReset" : "reset"}
+        onClick={onReset}
+        // onClick={}
+      >
         Reset
       </button>
     </div>
@@ -27,7 +31,7 @@ function Write({ tip, amount, children }) {
           <p>{tip}</p>
           <span>/ Person</span>
         </div>
-        <h1>{children}</h1>
+        <h1>$ {children}</h1>
       </div>
     </>
   );
