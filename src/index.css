@@ -184,14 +184,14 @@ label {
 }
 
 .inactiveReset {
-  background-color: var(--Darkgrayishcyan);
+  background-color: var(--Grayishcyan);
   width: 80%;
   height: 4rem;
   border: none;
   border-radius: 0.5rem;
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--Verydarkcyan);
+  color: var(--Darkgrayishcyan);
   cursor: pointer;
 }
 .reset {
@@ -231,11 +231,11 @@ label {
 
   .left {
     width: 50%;
-    /* height: 40rem; */
+    height: 40rem;
   }
   .right {
     width: 50%;
-    /* height: 40rem; */
+    height: 40rem;
   }
 }
 @media screen and (min-width: 1024px) {
