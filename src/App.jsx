@@ -18,9 +18,8 @@ function App() {
 
   const [selectedBtn, setSelectedBtn] = useState(null);
 
-
-  function handleselectedbtn(id){
-    selectedBtn(id)
+  function handleselectedbtn(id) {
+    selectedBtn(id);
   }
 
   function handleTipBtnInput(e) {
@@ -87,7 +86,6 @@ function App() {
               numbers={numbers}
               selectedBtn={selectedBtn}
               // handleselectedbtn={handleselectedbtn}
-
             />
           </div>
           <div className="right">
@@ -99,6 +97,18 @@ function App() {
               onReset={handleReset}
             />
           </div>
+        </div>
+
+        <div class="attribution">
+          Challenge by{" "}
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor
+          </a>
+          . Coded by{" "}
+          <a href="https://www.linkedin.com/in/chiemelie-ikechukwu-297ab4262">
+            Charlie X
+          </a>
+          .
         </div>
       </div>
     </>
