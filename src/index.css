@@ -31,6 +31,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding-top: 5rem;
+  gap: 5rem;
 }
 .bgCont {
   display: flex;
@@ -72,7 +73,7 @@ input {
   border-radius: 0.5rem;
   text-align: end;
   padding: 0 2rem;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--Verydarkcyan);
 }
@@ -203,4 +204,65 @@ label {
 
 .error {
   color: red;
+}
+.writeCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  body {
+  }
+
+  .left {
+    width: 50%;
+  }
+  .right {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+  }
+
+  .bgCont {
+    flex-direction: row;
+    width: 100rem;
+    height: 50rem;
+    padding: 0 10rem;
+    border-radius: 2rem;
+  }
+  .left {
+    height: 40rem;
+    gap: 5rem;
+  }
+  .right {
+    height: 40rem;
+    gap: 6rem;
+    padding: 2rem;
+  }
+
+  .btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 2.5rem;
+  }
+
+  .tipAmtCont {
+    gap: 14rem;
+  }
+  .writeCont {
+    gap: 5rem;
+  }
+  .bill {
+    gap: 2rem;
+  }
+  .num {
+    gap: 2rem;
+  }
 }

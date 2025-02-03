@@ -3,12 +3,14 @@ import React from "react";
 const TipAmount = ({ tipAmnt, totalAmountPerPerson, bill, num, onReset }) => {
   return (
     <div className="tipAmtCont">
-      <Write tip="Tip Amount">{tipAmnt}</Write>
-      <Write tip="Total">
-        {bill === "" || bill === "0" || totalAmountPerPerson === Infinity
-          ? 0
-          : totalAmountPerPerson}
-      </Write>
+      <div className="writeCont">
+        <Write tip="Tip Amount">{tipAmnt}</Write>
+        <Write tip="Total">
+          {bill === "" || bill === "0" || totalAmountPerPerson === Infinity
+            ? 0
+            : totalAmountPerPerson}
+        </Write>
+      </div>
 
       <button className="reset" onClick={onReset}>
         Reset

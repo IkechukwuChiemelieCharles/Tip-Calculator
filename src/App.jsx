@@ -27,13 +27,21 @@ function App() {
   }
 
   //Calc the tip amount
-  const tipAmnt = (+tipPerc / 100) * +bill;
+  let tipAmnt = (+tipPerc / 100) * +bill;
 
   //calc the total bill with tip
-  const totalbillWithTip = Math.round(+bill + +tipAmnt);
+  let totalbillWithTip = Math.round(+bill + +tipAmnt);
 
   // calc the amount  each person needs to pay
-  const totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
+  let totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
+
+  let tipAmnt2 = (+tipPerc / 100) * +bill;
+
+  //calc the total bill with tip
+  let totalbillWithTip2 = Math.round(+bill + +tipAmnt2);
+
+  // calc the amount  each person needs to pay
+  let totalAmountPerPerson2 = Math.round(+totalbillWithTip2 / +num);
 
   function handleReset() {
     setBill("");
