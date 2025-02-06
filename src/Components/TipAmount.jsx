@@ -1,15 +1,16 @@
 import React from "react";
 
 const TipAmount = ({ tipAmnt, totalAmountPerPerson, bill, num, onReset }) => {
+  console.log(typeof bill);
+  console.log(typeof tipAmnt);
+
+  const placeHolder = "0.00";
+
   return (
     <div className="tipAmtCont">
       <div className="writeCont">
-        <Write tip="Tip Amount">{Math.round(tipAmnt)}</Write>
-        <Write tip="Total">
-          {bill === "" || bill === "0" || totalAmountPerPerson === Infinity
-            ? 0
-            : totalAmountPerPerson}
-        </Write>
+        <Write tip="Tip Amount">{num > 0 ? tipAmnt : "0.00"}</Write>
+        <Write tip="Total">{num > 0 ? totalAmountPerPerson : "0.00"}</Write>
       </div>
 
       <button

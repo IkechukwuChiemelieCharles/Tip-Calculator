@@ -12,22 +12,30 @@ const numbers = [
 
 function App() {
   const [bill, setBill] = useState("");
+
+  console.log();
   const [custom, setCustom] = useState("");
-  const [num, setNum] = useState("");
+  const [num, setNum] = useState(" ");
   const [tipPerc, setTipPerc] = useState(0);
 
   const [selectedBtn, setSelectedBtn] = useState(null);
 
+  const [tip, setTip] = useState(0);
+
   function handleselectedbtn(id) {
-    selectedBtn(id);
+    setSelectedBtn(id);
+
+    console.log(`click2 ${id}`);
   }
 
   function handleTipBtnInput(e) {
     const value = e.target.innerText;
 
+    // const amt = (bill * value) / 100;
+
     setTipPerc(parseInt(value.replace("%", "")));
 
-    setSelectedBtn(!selectedBtn);
+    console.log(tipPerc);
   }
 
   //   function TotalAmntBtnCalc (){
@@ -53,14 +61,21 @@ function App() {
   //     }
 
   //Calc the tip amount
-  let tipAmnt = (+tipPerc / 100) * +bill;
+  // let tipAmnt = (+tipPerc || +custom / 100) * +bill;
+
+  let tipCalc = (+bill * +tipPerc || custom) / +num;
+  let tipAmnt = tipCalc.toFixed(2);
+
+  // let tipAmnt = (142.55 * 15) / 5;
+  // console.log(tipAmnt);
 
   //calc the total bill with tip
-  let totalbillWithTip = Math.round(+bill + +tipAmnt);
+  // let totalbillWithTip = Math.round(+bill + +tipAmnt);
 
   // calc the amount  each person needs to pay
-  let totalAmountPerPerson = Math.round(+totalbillWithTip / +num);
-
+  // let totalAmountPerPerson = +totalbillWithTip / +num;
+  let amount = +bill / +num;
+  let totalAmountPerPerson = amount.toFixed(2);
   function handleReset() {
     setBill("");
     setNum("");
@@ -68,6 +83,8 @@ function App() {
 
     tipAmnt = 0;
     totalAmountPerPerson = 0;
+
+    setSelectedBtn(null);
   }
   return (
     <>
@@ -83,8 +100,10 @@ function App() {
               num={num}
               setNum={setNum}
               onBtnClick={handleTipBtnInput}
+              handleselectedbtn={handleselectedbtn}
               numbers={numbers}
               selectedBtn={selectedBtn}
+              setSelectedBtn={setSelectedBtn}
               // handleselectedbtn={handleselectedbtn}
             />
           </div>

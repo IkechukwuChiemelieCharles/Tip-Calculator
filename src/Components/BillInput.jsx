@@ -12,6 +12,9 @@ export function BillInput({
   num,
   setNum,
   numbers,
+  handleselectedbtn,
+  selectedBtn,
+  setSelectedBtn,
 }) {
   return (
     <>
@@ -29,9 +32,17 @@ export function BillInput({
         <label>Select Tip %</label>
         <div className="btns">
           {numbers.map(function (num) {
-            return <Button num={num}  onBtnClick={onBtnClick} />;
+            return (
+              <Button
+                num={num}
+                onBtnClick={onBtnClick}
+                handleselectedbtn={handleselectedbtn}
+                selectedBtn={selectedBtn}
+                setSelectedBtn={setSelectedBtn}
+              />
+            );
           })}
-          
+
           <input
             type="text"
             placeholder="Custom"
