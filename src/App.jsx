@@ -13,7 +13,6 @@ const numbers = [
 function App() {
   const [bill, setBill] = useState("");
 
-  console.log();
   const [custom, setCustom] = useState("");
   const [num, setNum] = useState(" ");
   const [tipPerc, setTipPerc] = useState(0);
@@ -63,19 +62,34 @@ function App() {
   //Calc the tip amount
   // let tipAmnt = (+tipPerc || +custom / 100) * +bill;
 
-  let tipCalc = (+bill * +tipPerc || custom) / +num;
+  //UNDO
+
+  // let tipCalc = (+bill * +tipPerc || custom) / +num;
+
+  // console.log(tipCalc);
+  // let tipAmnt = tipCalc.toFixed(2);
+
+  // // let tipAmnt = (142.55 * 15) / 5;
+  // // console.log(tipAmnt);
+
+  // //calc the total bill with tip
+  // // let totalbillWithTip = Math.round(+bill + +tipAmnt);
+
+  // // calc the amount  each person needs to pay
+  // // let totalAmountPerPerson = +totalbillWithTip / +num;
+  // let amount = +bill / +num + parseFloat(tipAmnt);
+  // let totalAmountPerPerson = amount.toFixed(2);
+
+  let tipPercentage = tipPerc || custom;
+
+  let tipCalc =
+    +bill > 0 && +num > 0 ? (+bill * tipPercentage) / 100 / +num : 0;
+
   let tipAmnt = tipCalc.toFixed(2);
 
-  // let tipAmnt = (142.55 * 15) / 5;
-  // console.log(tipAmnt);
+  let totalAmountPerPerson =
+    +bill > 0 && +num > 0 ? (+bill / +num + tipCalc).toFixed(2) : "0.00";
 
-  //calc the total bill with tip
-  // let totalbillWithTip = Math.round(+bill + +tipAmnt);
-
-  // calc the amount  each person needs to pay
-  // let totalAmountPerPerson = +totalbillWithTip / +num;
-  let amount = +bill / +num;
-  let totalAmountPerPerson = amount.toFixed(2);
   function handleReset() {
     setBill("");
     setNum("");
